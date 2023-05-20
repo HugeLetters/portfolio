@@ -1,8 +1,14 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "astro/tsconfigs/strictest",
   "compilerOptions": {
     "jsx": "react-jsx",
     "jsxImportSource": "react",
-    "verbatimModuleSyntax": true
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@layout/*": ["src/layout/*"],
+      "@public/*": ["public/*"]
+    },
+    "baseUrl": "."
   }
 }

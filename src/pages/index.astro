@@ -1,0 +1,37 @@
+---
+import "../styles/index.pcss";
+import Head from "@components/head.astro";
+import Nav from "@components/header/nav.astro";
+import SectionLayout from "@layout/section.astro";
+import Welcome from "@components/section/welcome.astro";
+import Projects from "@components/section/projects.astro";
+import Contact from "@components/section/contact.astro";
+
+const SECTIONS: Section[] = [
+  { label: "About", id: "welcome-section", Component: Welcome },
+  { label: "Projects", id: "projects", Component: Projects },
+  { label: "Contact", id: "contact", Component: Contact },
+];
+---
+
+<!DOCTYPE html>
+<html
+  lang="en"
+  class="scroll-p-header bg-theme-gray text-slate-200 motion-safe:scroll-smooth"
+>
+  <Head />
+  <body class="pt-header">
+    <header class="fixed top-0 flex h-header w-full justify-end bg-theme-red font-poppins">
+      <Nav sections={SECTIONS} />
+    </header>
+    <main>
+      {
+        SECTIONS.map(({ Component, id }) => (
+          <SectionLayout {id}>
+            <Component />
+          </SectionLayout>
+        ))
+      }
+    </main>
+  </body>
+</html>

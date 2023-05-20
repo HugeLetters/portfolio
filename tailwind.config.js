@@ -1,9 +1,12 @@
+const headerH = "3rem";
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./index.html"],
+  content: ["./src/**/*.{astro,tsx}"],
   theme: {
     extend: {
-      spacing: { "header-height": "3.5rem" },
+      minHeight: { "screen-header": `calc(100vh - ${headerH})` },
+      spacing: { header: headerH },
       colors: {
         theme: {
           red: "hsl(355, 60%, 50%)",
@@ -13,6 +16,7 @@ module.exports = {
           "gray-dark": "hsl(270, 4%, 9%)",
         },
       },
+      fontFamily: { poppins: "Poppins, sans-serif" },
     },
   },
   plugins: [],
