@@ -1,7 +1,39 @@
+---
+---
+
 <div class="min-h-screen-header bg-gradient-to-tr from-theme-gray-light to-theme-gray-dark">
-  <div class="group">
-    Hey, I am <span class="group-hover:hidden">Huge Letters</span><span
-      class="hidden group-hover:inline">Evgenii Perminov</span
+  <p class="group text-3xl">
+    Hey, I am
+    <span class="inline-flex">
+      <span
+        class="inline-grid grid-cols-[1fr] group-hover:grid-cols-[0fr] motion-safe:transition-[grid-template-columns]"
+      >
+        <span class="overflow-hidden whitespace-nowrap py-1">Evgenii Perminov</span>
+      </span>
+      <span
+        class="inline-grid grid-cols-[0fr] group-hover:grid-cols-[1fr] motion-safe:transition-[grid-template-columns]"
+        ><span class="overflow-hidden overflow-y-clip whitespace-nowrap py-1">Huge Letters</span>
+      </span>
+    </span>
+  </p>
+  <label class="peer outline-2 outline-lime-300 focus-within:outline hover:font-bold">
+    <input
+      type="checkbox"
+      class="peer appearance-none"
+      aria-label="show text"
+    />
+    more <span
+      class="inline-block transition-transform peer-checked:translate-y-1 peer-checked:rotate-90"
     >
+      {">"}
+    </span>
+  </label>
+  <div
+    class="grid grid-rows-[0fr] peer-[:has(:checked)]:grid-rows-[1fr] motion-safe:transition-[grid-template-rows]"
+  >
+    <span class="overflow-hidden"
+      >I am a JavaScript/TypeScript web developer who likes to dabble in React and thinks mutations
+      get too much bad rap.
+    </span>
   </div>
 </div>
