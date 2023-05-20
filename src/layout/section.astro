@@ -1,0 +1,14 @@
+---
+import type { HTMLAttributes } from "astro/types";
+type Props = {
+  id: Section["id"];
+} & HTMLAttributes<"section">;
+const { id, ...props } = Astro.props;
+---
+
+<section
+  {id}
+  {...props}
+>
+  <slot />
+</section>
