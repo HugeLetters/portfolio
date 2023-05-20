@@ -1,7 +1,7 @@
 ---
 import "../styles/index.pcss";
 import Head from "@components/head.astro";
-import Nav from "@components/header/nav.astro";
+import Header from "@components/header.astro";
 import SectionLayout from "@layout/section.astro";
 import Welcome from "@components/section/welcome.astro";
 import Projects from "@components/section/projects.astro";
@@ -17,14 +17,12 @@ const SECTIONS: Section[] = [
 <!DOCTYPE html>
 <html
   lang="en"
-  class="scroll-p-header bg-theme-gray text-slate-200 motion-safe:scroll-smooth"
+  class="bg-theme-gray font-poppins text-slate-200 motion-safe:scroll-smooth sm:scroll-p-header"
 >
   <Head />
-  <body class="pt-header">
-    <header class="fixed top-0 flex h-header w-full justify-end bg-theme-red font-poppins">
-      <Nav sections={SECTIONS} />
-    </header>
-    <main>
+  <body class="flex flex-col items-center">
+    <Header sections={SECTIONS} />
+    <main class="flex max-w-7xl flex-col items-center">
       {
         SECTIONS.map(({ Component, id }) => (
           <SectionLayout {id}>
