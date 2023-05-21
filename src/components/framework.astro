@@ -1,0 +1,17 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = { framework: string; proficiency: string } & HTMLAttributes<"code">;
+const { framework, proficiency, class: classNames, ...props } = Astro.props;
+---
+
+<code
+  data-proficiency={proficiency}
+  class={" after:absolute after:content-[unset] hover:after:content-[attr(data-proficiency)] after:top-[37%] after:left-[15%] after:bg-neutral-800 after:outline after:p-1 after:rounded-sm after:max-w-[10rem] after:pointer-events-none" +
+    " " +
+    classNames +
+    " " +
+    "contrast-more:after:text-slate-50 contrast-more:after:bg-black contrast-more:text-slate-50 contrast-more:underline"}
+  {...props}
+  >{framework}</code
+>

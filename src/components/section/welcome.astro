@@ -1,39 +1,101 @@
 ---
+import photo from "@assets/photo.jpg";
+import Framework from "@components/framework.astro";
 ---
 
-<div class="min-h-screen-header bg-gradient-to-tr from-theme-gray-light to-theme-gray-dark">
-  <p class="group text-3xl">
+<div class="flex min-h-screen-header max-w-2xl flex-col items-center p-2 pt-10">
+  <p class="group self-stretch text-center text-3xl">
     Hey, I am
     <span class="inline-flex">
       <span
         class="inline-grid grid-cols-[1fr] group-hover:grid-cols-[0fr] motion-safe:transition-[grid-template-columns]"
       >
-        <span class="overflow-hidden whitespace-nowrap py-1">Evgenii Perminov</span>
+        <span class="overflow-hidden whitespace-nowrap">Evgenii</span>
       </span>
       <span
         class="inline-grid grid-cols-[0fr] group-hover:grid-cols-[1fr] motion-safe:transition-[grid-template-columns]"
-        ><span class="overflow-hidden overflow-y-clip whitespace-nowrap py-1">Huge Letters</span>
+        ><span class="overflow-hidden whitespace-nowrap">Huge Letters</span>
       </span>
-    </span>
+    </span>, a web developer
   </p>
-  <label class="peer outline-2 outline-lime-300 focus-within:outline hover:font-bold">
+  <label class="peer mt-2 rounded-sm p-1 focus-within:outline hover:text-theme-red">
     <input
       type="checkbox"
       class="peer appearance-none"
       aria-label="show text"
     />
-    more <span
-      class="inline-block transition-transform peer-checked:translate-y-1 peer-checked:rotate-90"
-    >
+    more <span class="inline-block transition-transform peer-checked:rotate-90">
       {">"}
     </span>
   </label>
   <div
-    class="grid grid-rows-[0fr] peer-[:has(:checked)]:grid-rows-[1fr] motion-safe:transition-[grid-template-rows]"
+    class="mt-3 grid grid-rows-[0fr] peer-[:has(:checked)]:grid-rows-[1fr] motion-safe:transition-[grid-template-rows]"
   >
-    <span class="overflow-hidden"
-      >I am a JavaScript/TypeScript web developer who likes to dabble in React and thinks mutations
-      get too much bad rap.
-    </span>
+    <div class="overflow-hidden">
+      <div class="relative flex gap-2">
+        <img
+          src={photo}
+          alt="me"
+          class="inline-block w-1/2 rounded-lg object-scale-down"
+        />
+        <div class="pt-4">
+          <p>
+            I am a <Framework
+              framework="JavaScript"
+              proficiency="I'm pretty good with it."
+              class="text-amber-200"
+            /> & <Framework
+              framework="TypeScript"
+              proficiency="I'm pretty good with it too!"
+              class="text-blue-400"
+            /> web developer who likes to dabble in <Framework
+              framework="React"
+              proficiency="I've built the majority of my stuff with it."
+              class="text-cyan-400"
+            /> and thinks mutations get too much bad rap.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Et porro, animi temporibus
+            explicabo beatae illo, maxime cumque ipsam consequatur quas laboriosam aperiam id
+            assumenda quod esse incidunt fugit quidem. Eaque. I also have varying experience with <Framework
+              framework="Express"
+              proficiency="I've built a simple REST API for the hotel I've worked with before"
+              class="text-gray-400"
+            />, <Framework
+              framework="Prisma"
+              proficiency="Also have used it for the hotel project and for my Discord bot"
+              class="text-indigo-600"
+            />, <Framework
+              framework="Tailwind"
+              proficiency="It is my preferred way to write CSS"
+              class="text-sky-500"
+            />, <Framework
+              framework="Jotai"
+              proficiency="It is my prefered way to manage global state in React 👻"
+            />, <Framework
+              framework="Svelte"
+              proficiency="I've used it to make a webapp for my mom :)"
+              class="text-orange-600"
+            />, <Framework
+              framework="Redux"
+              proficiency="I've also used this for the hotel project. I like it less than Jotai."
+              class="text-violet-500"
+            /> & <Framework
+              framework="Astro"
+              proficiency="I've used it to build this website"
+              class="text-orange-400"
+            />
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
+  <script>
+    // todo remove
+    (function () {
+      const checkbox = document.querySelector<HTMLInputElement>("input[type=checkbox]");
+      if (!checkbox) return;
+      checkbox.checked = true;
+    })();
+  </script>
 </div>

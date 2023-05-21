@@ -4,12 +4,12 @@ type Props = { sections: Section[] };
 const { sections } = Astro.props;
 ---
 
-<header class="top-0 flex h-20 justify-center self-stretch bg-theme-red sm:sticky sm:h-header">
+<header class="top-0 z-50 flex h-20 justify-center self-stretch bg-theme-red sm:sticky sm:h-header">
   <div class="flex max-w-[1920px] grow justify-between">
     <div class="m-1 flex gap-4">
       <div class="group aspect-square">
         <div
-          class="transition-transform group-hover:translate-x-[100%] group-hover:translate-y-[100%] group-hover:scale-[3]"
+          class="group-hover:translate-x-[100%] group-hover:translate-y-[100%] group-hover:scale-[3] motion-safe:transition-transform"
         >
           <img
             src={logo}
