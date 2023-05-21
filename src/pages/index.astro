@@ -22,7 +22,7 @@ const SECTIONS: Section[] = [
   <Head />
   <body class="flex flex-col items-center">
     <Header sections={SECTIONS} />
-    <main class="flex max-w-7xl flex-col items-center">
+    <main class="flex w-full flex-col items-stretch">
       {
         SECTIONS.map(({ Component, id }) => (
           <SectionLayout {id}>

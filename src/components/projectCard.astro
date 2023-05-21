@@ -16,7 +16,7 @@ const project = await getEntry("projects", projectID);
     <Image
       src={project.data.image}
       alt={project.data.name}
-      class="aspect-square min-w-full object-cover brightness-[.25] transition-[filter,transform] duration-300"
+      class="aspect-square min-w-full bg-black bg-opacity-25 object-cover brightness-[.25] transition-[filter,transform] duration-300"
     />
     <span
       class="absolute left-0 top-0 flex h-full w-full items-center justify-center p-4 text-center"
@@ -27,7 +27,7 @@ const project = await getEntry("projects", projectID);
   <div
     class="mt-1 flex h-10 items-center justify-center bg-slate-700 transition-opacity duration-300 before:text-amber-400 before:transition-opacity before:duration-300 before:content-['<'] after:text-amber-400 after:transition-opacity after:duration-300 after:content-['/>']"
   >
-    <span class="px-1">
+    <span class="px-1 text-center">
       {project.data.name}
     </span>
     <style>

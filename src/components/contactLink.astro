@@ -1,0 +1,20 @@
+---
+import type { ImageComponentLocalImageProps } from "@astrojs/image/components";
+import { Image } from "@astrojs/image/components";
+
+type Props = ImageComponentLocalImageProps & { socialLabel?: string; href: string };
+const { href, src, alt, socialLabel = alt } = Astro.props;
+---
+
+<a
+  {href}
+  target="_blank"
+  class="group mx-2 border-b text-lg duration-300 hover:mx-0 hover:px-2"
+>
+  <Image
+    {src}
+    {alt}
+    class="inline h-6 w-fit duration-300 group-hover:scale-110"
+  />
+  <span class="ml-1">{socialLabel}</span>
+</a>
