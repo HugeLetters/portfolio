@@ -3,7 +3,7 @@ import photo from "@assets/photo.jpg";
 import Framework from "@components/framework.astro";
 ---
 
-<div class="flex min-h-screen-header max-w-2xl flex-col items-center p-2 pt-10">
+<div class="flex max-w-2xl flex-col items-center p-2 pt-10">
   <p class="group self-stretch text-center text-3xl">
     Hey, I am
     <span class="inline-flex">
@@ -26,7 +26,9 @@ import Framework from "@components/framework.astro";
       aria-label="show text"
       checked
     />
-    more <span class="inline-block transition-transform peer-checked:rotate-90">
+    more <span
+      class="inline-block align-middle text-3xl transition-transform peer-checked:rotate-90 peer-checked:animate-none motion-safe:animate-pulse"
+    >
       {">"}
     </span>
   </label>

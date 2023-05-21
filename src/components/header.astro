@@ -2,10 +2,11 @@
 import logo from "@assets/logo.png";
 type Props = { sections: Section[] };
 const { sections } = Astro.props;
+// todo nav overflows on very small screens(<300px)
 ---
 
 <header class="top-0 z-50 flex h-20 justify-center self-stretch bg-theme-red sm:sticky sm:h-header">
-  <div class="flex max-w-[1920px] grow justify-between">
+  <div class="flex max-w-[min(1920px,100vw)] justify-between">
     <div class="m-1 flex gap-4">
       <div class="group aspect-square">
         <div
@@ -22,9 +23,9 @@ const { sections } = Astro.props;
           >
         </div>
       </div>
-      <h1 class="self-center whitespace-nowrap text-xl sm:text-4xl">My Portfolio</h1>
+      <h1 class="self-center whitespace-nowrap text-xl font-medium sm:text-4xl">My Portfolio</h1>
     </div>
-    <nav class="max-w-fit shrink-0">
+    <nav class="shrink-0">
       <ul class="grid min-h-full grid-rows-3 items-stretch sm:grid-cols-3 sm:grid-rows-1">
         {
           sections.map(({ id: href, label }) => (

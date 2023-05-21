@@ -3,12 +3,12 @@ import "../styles/index.pcss";
 import Head from "@components/head.astro";
 import Header from "@components/header.astro";
 import SectionLayout from "@layout/section.astro";
-import Welcome from "@components/section/welcome.astro";
+import About from "@components/section/about.astro";
 import Projects from "@components/section/projects.astro";
 import Contact from "@components/section/contact.astro";
 
 const SECTIONS: Section[] = [
-  { label: "About", id: "welcome-section", Component: Welcome },
+  { label: "About", id: "about", Component: About },
   { label: "Projects", id: "projects", Component: Projects },
   { label: "Contact", id: "contact", Component: Contact },
 ];
