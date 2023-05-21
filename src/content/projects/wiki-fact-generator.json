@@ -1,0 +1,5 @@
+{
+  "name": "Wiki Fact Generator",
+  "image": "@assets/projects/wiki-fact-generator.png",
+  "description": "A simple page built with jQuery which fetches random Wikipedia articles and show their first meaningful paragraph. It tries to filter out articles which don't contain any text. Data fetching was made using a Web Worker as a practice."
+}

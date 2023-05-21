@@ -1,0 +1,5 @@
+{
+  "name": "Web Calculator",
+  "image": "@assets/projects/web-calculator.png",
+  "description": "A basic calculator with all calculation logic done manually, without eval(). Built with React, SASS and Jotai for state management."
+}

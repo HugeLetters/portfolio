@@ -1,0 +1,5 @@
+{
+  "name": "Drum Machine",
+  "image": "@assets/projects/drum-machine.png",
+  "description": "It's like a simplified FL Studio where you can make a beat using provided samples. Project was made with React and SASS. It also utilizes a Shared Worker to optimize audio downloads but those are not supported on Chrome/Opera for Android."
+}

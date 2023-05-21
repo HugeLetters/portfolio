@@ -1,0 +1,72 @@
+---
+import { getEntry, type CollectionEntry } from "astro:content";
+import { Image } from "@astrojs/image/components";
+
+type Props = { projectID: CollectionEntry<"projects">["id"] };
+const { projectID } = Astro.props;
+const project = await getEntry("projects", projectID);
+---
+
+<a
+  href={project.data.link ?? project.id}
+  target="_blank"
+  class="anchor block overflow-hidden rounded-xl shadow-2xl"
+>
+  <div class="relative overflow-hidden">
+    <Image
+      src={project.data.image}
+      alt={project.data.name}
+      class="aspect-square min-w-full object-cover brightness-[.25] transition-[filter,transform] duration-300"
+    />
+    <span
+      class="absolute left-0 top-0 flex h-full w-full items-center justify-center p-4 text-center"
+    >
+      {project.data.description}
+    </span>
+  </div>
+  <div
+    class="mt-1 flex h-10 items-center justify-center bg-slate-700 transition-opacity duration-300 before:text-amber-400 before:transition-opacity before:duration-300 before:content-['<'] after:text-amber-400 after:transition-opacity after:duration-300 after:content-['/>']"
+  >
+    <span class="px-1">
+      {project.data.name}
+    </span>
+    <style>
+      @media (hover: hover) {
+        .anchor {
+          img {
+            filter: brightness(1);
+
+            ~ span {
+              opacity: 0;
+              visibility: hidden;
+            }
+          }
+          div:last-child {
+            &::before,
+            &::after {
+              opacity: 0;
+            }
+          }
+
+          &:hover {
+            img {
+              transform: scale(1.05);
+              filter: brightness(0.25);
+
+              ~ span {
+                visibility: visible;
+                opacity: 1;
+              }
+            }
+            div:last-child {
+              &::before,
+              &::after {
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+    </style>
+  </div>
+</a>

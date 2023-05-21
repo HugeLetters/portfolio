@@ -1,0 +1,6 @@
+{
+  "name": "Chrome extension development utility",
+  "image": "@assets/projects/crx-reload.png",
+  "description": "A chrome extension for developing chrome extensions - a development server of sorts. During development you would need to a run a websocket server which emits file change events to a websocket client initiated by this extension which will reload your extension scripts.",
+  "link": "https://chrome.google.com/webstore/detail/crx-reload/llliedochkbemljmkdlmcfmneacpnlib"
+}

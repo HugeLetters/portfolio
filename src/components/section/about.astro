@@ -1,9 +1,9 @@
 ---
 import photo from "@assets/photo.jpg";
-import Framework from "@components/framework.astro";
+import FrameworkTag from "@components/frameworkTag.astro";
 ---
 
-<div class="flex max-w-2xl flex-col items-center p-2 pt-10">
+<div class="flex max-w-2xl flex-col items-center pt-10">
   <p class="group self-stretch text-center text-3xl">
     Hey, I am
     <span class="inline-flex">
@@ -18,71 +18,79 @@ import Framework from "@components/framework.astro";
       </span>
     </span>, a web developer
   </p>
-  <label class="peer mt-2 rounded-sm p-1 focus-within:outline hover:text-theme-red">
-    <!-- todo remove checked attr -->
+  <label class="mt-2 rounded-sm p-1 focus-within:outline hover:text-theme-red">
     <input
       type="checkbox"
-      class="peer appearance-none"
-      aria-label="show text"
-      checked
+      class="appearance-none"
+      aria-label="show about section"
     />
     more <span
-      class="inline-block align-middle text-3xl transition-transform peer-checked:rotate-90 peer-checked:animate-none motion-safe:animate-pulse"
+      class="inline-block align-middle text-3xl transition-transform motion-safe:animate-pulse"
     >
       {">"}
     </span>
   </label>
+  <style>
+    label:has(input[type="checkbox"]:checked) > span {
+      transform: rotate(90deg);
+      animation: none;
+    }
+    label:has(input[type="checkbox"]:checked) ~ #collapsible-description {
+      grid-template-rows: 1fr;
+    }
+  </style>
   <div
-    class="mt-3 grid grid-rows-[0fr] peer-[:has(:checked)]:grid-rows-[1fr] motion-safe:transition-[grid-template-rows]"
+    id="collapsible-description"
+    class="mt-3 grid grid-rows-[0fr] motion-safe:transition-[grid-template-rows]"
   >
     <div class="overflow-hidden">
       <div class="mb-2 flex items-start gap-2">
         <img
-          src={photo}
+          src={photo.src}
           alt="me"
           class="inline-block w-1/2 rounded-lg object-scale-down"
         />
         <div>
           <p>
-            I am a <Framework
+            I am a <FrameworkTag
               framework="JavaScript"
               proficiency="I'm pretty good with it."
               class="text-amber-200"
-            /> & <Framework
+            /> & <FrameworkTag
               framework="TypeScript"
               proficiency="I'm pretty good with it too!"
               class="text-blue-400"
-            /> web developer who likes to dabble in <Framework
+            /> web developer who likes to dabble in <FrameworkTag
               framework="React"
               proficiency="I've built the majority of my stuff with it."
               class="text-cyan-400"
             /> and thinks mutations get too much bad rap.
           </p>
           <p>
-            I've also got some experience with <Framework
+            I've also got some experience with <FrameworkTag
               framework="Express"
               proficiency="I've built a simple REST API for the hotel I've worked with before"
               class="text-gray-400"
-            />, <Framework
+            />, <FrameworkTag
               framework="Prisma"
               proficiency="Also have used it for the hotel project and for my Discord bot"
               class="text-indigo-600"
-            />, <Framework
+            />, <FrameworkTag
               framework="Tailwind"
               proficiency="It is my preferred way to write CSS"
               class="text-sky-500"
-            />, <Framework
+            />, <FrameworkTag
               framework="Jotai"
               proficiency="It is my prefered way to manage global state in React 👻"
-            />, <Framework
+            />, <FrameworkTag
               framework="Svelte"
               proficiency="I've used it to make a webapp for my mom :)"
               class="text-orange-600"
-            />, <Framework
+            />, <FrameworkTag
               framework="Redux"
               proficiency="I've also used this for the hotel project. I like it less than Jotai."
               class="text-violet-500"
-            /> & <Framework
+            /> & <FrameworkTag
               framework="Astro"
               proficiency="I've used it to build this website"
               class="text-orange-400"

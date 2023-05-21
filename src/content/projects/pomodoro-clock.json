@@ -1,0 +1,5 @@
+{
+  "name": "Pomodoro Clock",
+  "image": "@assets/projects/pomodoro-clock.png",
+  "description": "Pomodoro Clock app which allows you to save different timer presets - presets are saved to the browser local storage. Project is build with React and Tailwind and uses zod to validate local storage shape, uses Jotai for state management, D3 for clock animations  and some other minor stuff too."
+}

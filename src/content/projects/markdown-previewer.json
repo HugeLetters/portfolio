@@ -1,0 +1,5 @@
+{
+  "name": "Markdown Previewer",
+  "image": "@assets/projects/markdown-previewer.png",
+  "description": "An app which provides a utlity how will your markdown look after parsing. It uses Marked and Prism under the hood to do the parsing and DOMPurify for input sanitization even though it's not really needed here. All the other features were made with React and vanilla Javascript."
+}

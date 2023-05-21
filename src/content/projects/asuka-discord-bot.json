@@ -1,0 +1,6 @@
+{
+  "name": "Asuka the Discord Bot",
+  "image": "@assets/projects/asuka-discord-bot.png",
+  "description": "A Discord bot made from scratch interacting with Discord API directly, without using discordjs. At the moment of writing I'm redoing this bot with TypeScript and better practices but you can see the original fully working bot in an earlier commit 'bc8805e'. This bot utlizes plenty of stuff including websockets, YouTube API, sequelize(migrating to Prisma now), sqlite, sharp, an imageboard API, HTML parser etc.",
+  "link": "https://github.com/HugeLetters/Asuka-Discord-Bot"
+}

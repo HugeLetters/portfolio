@@ -13,14 +13,20 @@ const { sections } = Astro.props;
           class="group-hover:translate-x-[100%] group-hover:translate-y-[100%] group-hover:scale-[3] motion-safe:transition-transform"
         >
           <img
-            src={logo}
+            src={logo.src}
             alt="me at work"
             class="aspect-square rounded-full border-2"
           />
           <span
+            id="me-at-work"
             class="whitespace-nowrap opacity-0 transition-opacity duration-700 group-hover:opacity-100"
             >me at work</span
           >
+          <style>
+            #me-at-work {
+              text-shadow: 0px 0px 2px black, 0px 0px 2px black, 0px 0px 2px black;
+            }
+          </style>
         </div>
       </div>
       <h1 class="self-center whitespace-nowrap text-xl font-medium sm:text-4xl">My Portfolio</h1>
