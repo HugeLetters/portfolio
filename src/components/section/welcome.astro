@@ -10,19 +10,21 @@ import Framework from "@components/framework.astro";
       <span
         class="inline-grid grid-cols-[1fr] group-hover:grid-cols-[0fr] motion-safe:transition-[grid-template-columns]"
       >
-        <span class="overflow-hidden whitespace-nowrap">Evgenii</span>
+        <span class="overflow-hidden whitespace-nowrap pb-1">Evgenii</span>
       </span>
       <span
         class="inline-grid grid-cols-[0fr] group-hover:grid-cols-[1fr] motion-safe:transition-[grid-template-columns]"
-        ><span class="overflow-hidden whitespace-nowrap">Huge Letters</span>
+        ><span class="overflow-hidden whitespace-nowrap pb-1">Huge Letters</span>
       </span>
     </span>, a web developer
   </p>
   <label class="peer mt-2 rounded-sm p-1 focus-within:outline hover:text-theme-red">
+    <!-- todo remove checked attr -->
     <input
       type="checkbox"
       class="peer appearance-none"
       aria-label="show text"
+      checked
     />
     more <span class="inline-block transition-transform peer-checked:rotate-90">
       {">"}
@@ -32,13 +34,13 @@ import Framework from "@components/framework.astro";
     class="mt-3 grid grid-rows-[0fr] peer-[:has(:checked)]:grid-rows-[1fr] motion-safe:transition-[grid-template-rows]"
   >
     <div class="overflow-hidden">
-      <div class="relative flex gap-2">
+      <div class="mb-2 flex items-start gap-2">
         <img
           src={photo}
           alt="me"
           class="inline-block w-1/2 rounded-lg object-scale-down"
         />
-        <div class="pt-4">
+        <div>
           <p>
             I am a <Framework
               framework="JavaScript"
@@ -55,9 +57,7 @@ import Framework from "@components/framework.astro";
             /> and thinks mutations get too much bad rap.
           </p>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Et porro, animi temporibus
-            explicabo beatae illo, maxime cumque ipsam consequatur quas laboriosam aperiam id
-            assumenda quod esse incidunt fugit quidem. Eaque. I also have varying experience with <Framework
+            I've also got some experience with <Framework
               framework="Express"
               proficiency="I've built a simple REST API for the hotel I've worked with before"
               class="text-gray-400"
@@ -88,14 +88,22 @@ import Framework from "@components/framework.astro";
           </p>
         </div>
       </div>
+      <div class="px-3">
+        <p>
+          I've studied Applied Mathematics in my university and so these are the aspects of
+          programming I enjoy the most.
+        </p>
+        <p>
+          I like to think about problems with performance in mind and stuff like Advent of Code
+          really gets my gears turning. And I also strive to adhere to single the source of truth
+          principle.
+        </p>
+        <p>In my free time I'm usually clay sculpting or gaming.</p>
+        <p>
+          My favorite color is dark blue and my favorite movie is The Departed and that's pretty
+          much it.
+        </p>
+      </div>
     </div>
   </div>
-  <script>
-    // todo remove
-    (function () {
-      const checkbox = document.querySelector<HTMLInputElement>("input[type=checkbox]");
-      if (!checkbox) return;
-      checkbox.checked = true;
-    })();
-  </script>
 </div>
