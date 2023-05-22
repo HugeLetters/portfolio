@@ -1,6 +1,6 @@
 {
   "name": "Chrome extension for guessthe.game",
-  "image": "@assets/projects/guess-the-game-extended.svg",
+  "image": "@assets/projects/guess-the-game-extended.png",
   "description": "Chrome extension for guessthe.game website which adds new functionality, fixes accessibility and performance issues. Initially was made from scratch but later migrated to Plasmo framework.",
   "link": "https://chrome.google.com/webstore/detail/guessthegame-extended/ocpacikjnhpgipnindjnaknfjgkpcioo"
 }
