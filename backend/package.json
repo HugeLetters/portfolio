@@ -1,16 +1,6 @@
 {
-  "name": "portfolio-api",
-  "version": "1.0.0",
-  "description": "An API for my portfolio",
   "type": "module",
-  "scripts": {},
-  "keywords": [],
-  "author": "Huge Letters",
-  "license": "ISC",
   "dependencies": {
-    "vercel": "^29.3.6"
-  },
-  "devDependencies": {
-    "@vercel/node": "^2.14.3"
+    "zod": "^3.21.4"
   }
 }

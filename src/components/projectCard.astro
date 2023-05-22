@@ -1,33 +1,36 @@
 ---
 import { getEntry, type CollectionEntry } from "astro:content";
 import { Image } from "@astrojs/image/components";
+import LikeButton from "@components/likeButton";
 
-type Props = { projectID: CollectionEntry<"projects">["id"] };
-const { projectID } = Astro.props;
+type Props = { projectID: CollectionEntry<"projects">["id"]; votes: number };
+const { projectID, votes } = Astro.props;
 const project = await getEntry("projects", projectID);
 ---
 
-<a
-  href={project.data.link ?? project.id}
-  target="_blank"
-  class="anchor block overflow-hidden rounded-xl shadow-2xl"
->
-  <div class="relative overflow-hidden">
-    <Image
-      src={project.data.image}
-      alt={project.data.name}
-      class="aspect-square min-w-full bg-black bg-opacity-25 object-cover brightness-[.25] transition-[filter,transform] duration-300"
-    />
-    <span
-      class="absolute left-0 top-0 flex h-full w-full items-center justify-center p-4 text-center"
-    >
-      {project.data.description}
-    </span>
-  </div>
-  <div
-    class="mt-1 flex h-10 items-center justify-center bg-slate-700 transition-opacity duration-300 before:text-amber-400 before:transition-opacity before:duration-300 before:content-['<'] after:text-amber-400 after:transition-opacity after:duration-300 after:content-['/>']"
+<div class="anchor overflow-hidden rounded-xl shadow-2xl">
+  <a
+    href={project.data.link ?? project.id}
+    target="_blank"
+    class="block"
   >
-    <span class="px-1 text-center">
+    <div class="relative overflow-hidden">
+      <Image
+        src={project.data.image}
+        alt={project.data.name}
+        class="aspect-square min-w-full bg-black bg-opacity-25 object-cover brightness-[.25] transition-[filter,transform] duration-300"
+      />
+      <span
+        class="absolute left-0 top-0 flex h-full w-full items-center justify-center p-4 text-center duration-300"
+      >
+        {project.data.description}
+      </span>
+    </div>
+  </a>
+  <div class="relative mt-1 flex h-10 items-center justify-center bg-slate-700">
+    <span
+      class="px-1 text-center before:text-amber-400 before:duration-300 before:content-['<'] after:text-amber-400 after:duration-300 after:content-['/>']"
+    >
       {project.data.name}
     </span>
     <style>
@@ -41,7 +44,7 @@ const project = await getEntry("projects", projectID);
               visibility: hidden;
             }
           }
-          div:last-child {
+          div:last-of-type > span {
             &::before,
             &::after {
               opacity: 0;
@@ -58,7 +61,7 @@ const project = await getEntry("projects", projectID);
                 opacity: 1;
               }
             }
-            div:last-child {
+            div:last-of-type > span {
               &::before,
               &::after {
                 opacity: 1;
@@ -68,5 +71,10 @@ const project = await getEntry("projects", projectID);
         }
       }
     </style>
+    <LikeButton
+      {votes}
+      id={project.id}
+      client:idle
+    />
   </div>
-</a>
+</div>
