@@ -6,7 +6,9 @@ import fs from "fs/promises";
 export default function (request: VercelRequest, response: VercelResponse) {
   response.setHeader(
     "Access-Control-Allow-Origin",
-    process.env.VERCEL_ENV === "development" ? "http://localhost:3000" : "https://hugeletters.org"
+    process.env.VERCEL_ENV === "development"
+      ? "http://localhost:3000"
+      : "https://www.hugeletters.org"
   );
   response.setHeader("Access-Control-Allow-Credentials", "true");
   response.setHeader("Access-Control-Allow-Methods", "GET,POST,OPTIONS");

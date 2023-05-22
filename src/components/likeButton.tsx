@@ -8,9 +8,6 @@ export default function LikeButton({ id }: { id: CollectionEntry<"projects">["id
 
   useLayoutEffect(() => {
     if (localStorage.getItem(id) === "true") setLiked(true);
-    fetch(API_ENDPOINT)
-      .then((r) => r.json())
-      .then(console.log);
   }, []);
 
   function handleLikeClick() {
@@ -68,4 +65,4 @@ export default function LikeButton({ id }: { id: CollectionEntry<"projects">["id
 const API_ENDPOINT =
   (import.meta.env.MODE === "development"
     ? "http://localhost:3001"
-    : "https://portfolio-api-hugeletters.vercel.app/") + "/api/rating";
+    : "https://portfolio-api-hugeletters.vercel.app") + "/api/rating";
