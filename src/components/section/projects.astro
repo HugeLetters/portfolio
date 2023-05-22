@@ -8,7 +8,7 @@ const projects = await getCollection("projects");
 <h1 class="my-10 text-center text-3xl font-semibold underline underline-offset-[0.3rem]">
   These are some of my projects
 </h1>
-<div class="mx-auto grid max-w-7xl auto-rows-[1fr] gap-4">
+<div class="mx-auto grid max-w-7xl auto-rows-[1fr] gap-7">
   {projects.map(({ id }) => <ProjectCard projectID={id} />)}
 </div>
 <style>
